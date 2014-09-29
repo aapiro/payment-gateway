@@ -1,11 +1,11 @@
 /**
  * 
  */
-package codingsaint.common.container;
+package codingsaint.common.controller;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 /*
 The MIT License (MIT)
 
@@ -29,23 +29,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * @author Coding Saint
  *
  */
-@Configuration
-@EnableWebMvc
-public class AppConfigurerAdapter extends WebMvcConfigurerAdapter   {
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
-		registry.addResourceHandler("/images/**").addResourceLocations("/images/");
-		registry.addResourceHandler("/fonts/**").addResourceLocations("/fonts/");
-		registry.addResourceHandler("/js/**").addResourceLocations("/js/");
-		
-	    
+@Controller
+public class ApplicationInitializationController {
+	
+	@RequestMapping("/index")
+	public String getIndex(){
+		return "index";
 	}
 
 }

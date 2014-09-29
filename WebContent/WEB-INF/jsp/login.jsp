@@ -1,3 +1,4 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,12 +167,12 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="#">
-							<input type="text" placeholder="Name"/>
-							<input type="email" placeholder="Email Address"/>
-							<input type="password" placeholder="Password"/>
+						<form:form modelAttribute="signup" action="application_signup">
+							<form:input path="name" placeholder="Name"/>
+							<form:input path="email" type="email" placeholder="Email Address"/>
+							<form:password path="password" placeholder="Password"/>
 							<button type="submit" class="btn btn-default">Signup</button>
-						</form>
+						</form:form>
 					</div><!--/sign up form-->
 				</div>
 			</div>
