@@ -21,7 +21,7 @@ In order to use it to great effect. Download/Fork repository on your local. Add 
 ### Todo's
 
  - Write Tests
- - Currently everything :)
+ - Currently everything :). Keep watching.
  
 License
 ----

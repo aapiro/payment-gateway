@@ -41,7 +41,7 @@ public class UIDGenerator {
 	 * <code>getUID</code> :gives a JAVA UID
 	 * @return String :a universal Unique Identifier String
 	 */
-	public  String getUID(){
+	public static String getUID(){
 		return UUID.randomUUID().toString().toUpperCase();
 	}
 

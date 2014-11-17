@@ -3,6 +3,7 @@
  */
 package codingsaint.paymentgateway.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -55,4 +56,9 @@ public class Configurations {
 	 return resolver;
 
 }
-} 
+	@Bean
+	public static LoggerPostProcessor activateLoggerPostProcessor(){
+	return new LoggerPostProcessor();
+	}
+	}
+ 

@@ -3,8 +3,11 @@
  */
 package codingsaint.common.controller;
 
+import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import codingsaint.paymentgateway.config.Log;
 
 /*
 The MIT License (MIT)
@@ -36,9 +39,11 @@ SOFTWARE.
  */
 @Controller
 public class ApplicationInitializationController {
-	
+	@Log
+	private static Logger LOGGER; 
 	@RequestMapping("/index")
 	public String getIndex(){
+		LOGGER.debug("Lets Log");
 		return "index";
 	}
 

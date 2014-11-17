@@ -12,6 +12,12 @@
 		<spring.version>4.1.0.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<jdk.version>1.6</jdk.version>
+		 <logback.version>1.1.2</logback.version>
+		 <jcloverslf4j.version>1.7.7</jcloverslf4j.version>
+		 <mysql.connector.version>5.1.30</mysql.connector.version>
+		
+		 <hibernate.version>4.2.11.Final</hibernate.version>
+		<dbcp.version>1.4</dbcp.version>
 	</properties>
 	<!-- Properties Ends -->
 
@@ -48,7 +54,28 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+		<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>${spring.version}</version>
+	<exclusions>
+	   <exclusion>
+		  <groupId>commons-logging</groupId>
+		  <artifactId>commons-logging</artifactId>
+	   </exclusion>
+	</exclusions>			
+</dependency>
+<!-- LogBack dependencies --> 
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>${logback.version}</version>
+</dependency>
+<dependency>                                    
+    <groupId>org.slf4j</groupId>                
+    <artifactId>jcl-over-slf4j</artifactId>    
+    <version>${jcloverslf4j.version}</version>  
+</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -63,7 +90,27 @@
 			<version>0.5.2</version>
 		</dependency>
 		<!-- Paypal Dependencies ends -->
-
+<!-- Hibernate ORM -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- database pool -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${dbcp.version}</version>
+		</dependency>
+ 
+	<!-- Hibernate ORM Ends-->
+		<!-- MySql Driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+ 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
